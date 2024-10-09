@@ -43,6 +43,10 @@ public class Student {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	
+	// No-argument constructor
+    public Student() {
+    }// why exactly I need this ??
 	public Student( String firstName, String lastName, String email) {
 		
 		

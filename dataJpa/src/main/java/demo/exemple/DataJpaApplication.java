@@ -19,17 +19,40 @@ public class DataJpaApplication {
 	public CommandLineRunner commandLineRunner(StudentDAO studentDAO) {
 		return runner ->{
 			//creating a object
-			System.out.println("-_-_-_-_-_-_-_Creating one student-_-_-_-_-_-");
-			createStudent(studentDAO);
-			System.out.println("-_-_-_-_-_-_-_Creating multimples students-_-_-_-_-_-");
-			createMultiplesStudent(studentDAO);
+			//System.out.println("-_-_-_-_-_-_-_Creating one student-_-_-_-_-_-");
+			//createStudent(studentDAO);
+			//System.out.println("-_-_-_-_-_-_-_Creating multimples students-_-_-_-_-_-");
+			//createMultiplesStudent(studentDAO);
+			readStudent(studentDAO);
 		};
+	}
+
+	private void readStudent(StudentDAO studentDAO) {
+		//create the student object
+		System.out.println("creating new student object ...");
+		Student tempStudent = new Student("user", "Benmasnour","user@gmail.com");
+				
+		//save the student object
+		System.out.println("Saving the student");
+		studentDAO.save(tempStudent);
+				
+		//display if of the saved student
+		int theId = tempStudent.getId();
+		System.out.println("Saved student with id = "+theId);
+			
+		
+		//retriver student based on the id: (Primary key)
+		System.out.println("retriving student with id="+theId);
+		Student myStudent= studentDAO.findById(theId);
+		System.out.println("Fount the studnet:"+myStudent.toString());
+		//display student
+		
 	}
 
 	private void createStudent(StudentDAO studentDAO) {
 		//create the student object
 		System.out.println("creating new student object ...");
-		Student tempStudent = new Student("Mohamed Amine", "Benmasnour","mohamedpoly9@gmail.com");
+		Student tempStudent = new Student("user", "Benmasnour","user@gmail.com");
 		
 		//save the student object
 		System.out.println("Saving the student");
