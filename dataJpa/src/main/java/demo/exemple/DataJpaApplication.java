@@ -18,6 +18,7 @@ public class DataJpaApplication {
 	@Bean
 	public CommandLineRunner commandLineRunner(StudentDAO studentDAO) {
 		return runner ->{
+			//creating a object
 			System.out.println("-_-_-_-_-_-_-_Creating one student-_-_-_-_-_-");
 			createStudent(studentDAO);
 			System.out.println("-_-_-_-_-_-_-_Creating multimples students-_-_-_-_-_-");

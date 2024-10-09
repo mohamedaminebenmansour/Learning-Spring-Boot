@@ -18,6 +18,8 @@ public class StudentDAOImpl implements StudentDAO {
 	public StudentDAOImpl(EntityManager entityManager) {
 		this.entityManager= entityManager;
 	}
+	
+	//creating a object
 	//implement save method
 	
 	@Override
