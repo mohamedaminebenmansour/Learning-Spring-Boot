@@ -26,8 +26,20 @@ public class DataJpaApplication {
 			//System.out.println("-_-_-_-_-_-_-_Creating multimples students-_-_-_-_-_-");
 			//createMultiplesStudent(studentDAO);
 			//readStudent(studentDAO);
-			queryForStudent(studentDAO);
+			//queryForStudent(studentDAO);
+			queryForStudentByLastName(studentDAO);
 		};
+	}
+
+	private void queryForStudentByLastName(StudentDAO studentDAO) {
+		//get a list of students
+				List <Student> theStudents = studentDAO.findByLastName("wahada");	
+				System.out.println("size of list :"+ theStudents.size());
+				//display list of students
+				for(Student tempStudent :theStudents) {
+					System.out.println(tempStudent);
+				}
+		
 	}
 
 	private void queryForStudent(StudentDAO studentDAO) {
