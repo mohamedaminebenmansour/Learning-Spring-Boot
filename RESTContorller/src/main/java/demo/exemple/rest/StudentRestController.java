@@ -34,7 +34,10 @@ public class StudentRestController {
 	//define endpoint or "/students/{studentId}" - return student at index
 	@GetMapping("/students/{studentId}")
 	public Student getStudent(@PathVariable int studentId) {
-		System.out.println("return");
+		//check the studentId again list size
+		if((studentId>=theStudents.size())|| (studentId<0)) {
+			throw new StudentNotFoundException("Student id not found - "+studentId);
+		}
 		return theStudents.get(studentId);
 	}
 }
