@@ -23,14 +23,14 @@ public class DataJpaApplication {
 			//creating a object
 			//System.out.println("-_-_-_-_-_-_-_Creating one student-_-_-_-_-_-");
 			//createStudent(studentDAO);
-			//System.out.println("-_-_-_-_-_-_-_Creating multimples students-_-_-_-_-_-");
-			//createMultiplesStudent(studentDAO);
+			System.out.println("-_-_-_-_-_-_-_Creating multimples students-_-_-_-_-_-");
+			createMultiplesStudent(studentDAO);
 			//readStudent(studentDAO);
 			//queryForStudent(studentDAO);
 			//queryForStudentByLastName(studentDAO);
 			//updateStudent(studentDAO);
 			//delteStudent(studentDAO);
-			deleteAllStudents(studentDAO);
+			//deleteAllStudents(studentDAO);
 		};
 	}
 
