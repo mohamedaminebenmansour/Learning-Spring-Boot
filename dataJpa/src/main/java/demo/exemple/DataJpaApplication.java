@@ -1,5 +1,7 @@
 package demo.exemple;
 
+import java.util.List;
+
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -23,8 +25,20 @@ public class DataJpaApplication {
 			//createStudent(studentDAO);
 			//System.out.println("-_-_-_-_-_-_-_Creating multimples students-_-_-_-_-_-");
 			//createMultiplesStudent(studentDAO);
-			readStudent(studentDAO);
+			//readStudent(studentDAO);
+			queryForStudent(studentDAO);
 		};
+	}
+
+	private void queryForStudent(StudentDAO studentDAO) {
+		//get a list of students
+		List <Student> theStudents = studentDAO.findAll();
+		
+		//display list of students
+		for(Student tempStudent :theStudents) {
+			System.out.println(tempStudent);
+		}
+		
 	}
 
 	private void readStudent(StudentDAO studentDAO) {
