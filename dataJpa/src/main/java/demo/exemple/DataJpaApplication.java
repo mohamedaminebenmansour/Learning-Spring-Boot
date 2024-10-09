@@ -29,8 +29,17 @@ public class DataJpaApplication {
 			//queryForStudent(studentDAO);
 			//queryForStudentByLastName(studentDAO);
 			//updateStudent(studentDAO);
-			delteStudent(studentDAO);
+			//delteStudent(studentDAO);
+			deleteAllStudents(studentDAO);
 		};
+	}
+
+	private void deleteAllStudents(StudentDAO studentDAO) {
+		// TODO Auto-generated method stub
+		System.out.println("Deleting all students ...");
+		int numRowsDeleted = studentDAO.deleteAll();
+		System.out.println("Deleted row count: "+numRowsDeleted);
+				
 	}
 
 	private void delteStudent(StudentDAO studentDAO) {

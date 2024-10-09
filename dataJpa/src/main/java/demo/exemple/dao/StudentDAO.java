@@ -18,5 +18,7 @@ public interface StudentDAO {
 	void update(Student thesStudent);
 	//delete a object
 	void delete(Integer id);
+	//delete all object and return number of objects 
+	int deleteAll();
 	
 }
