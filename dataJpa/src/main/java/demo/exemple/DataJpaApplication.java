@@ -27,8 +27,27 @@ public class DataJpaApplication {
 			//createMultiplesStudent(studentDAO);
 			//readStudent(studentDAO);
 			//queryForStudent(studentDAO);
-			queryForStudentByLastName(studentDAO);
+			//queryForStudentByLastName(studentDAO);
+			updateStudent(studentDAO);
 		};
+	}
+
+	private void updateStudent(StudentDAO studentDAO) {
+		//retrieve student based on the id(Primary key)
+		int studnetId=1;
+		System.out.println("Getting student with id: "+studnetId);
+		Student myStudent = studentDAO.findById(studnetId);
+		
+		//change first name to
+		System.out.println("Updating student...");
+		myStudent.setFirstName("Damine");
+		
+		//update the std
+		studentDAO.update(myStudent);
+		
+		//display the updated std
+		System.out.println("updated student: "+myStudent);
+		
 	}
 
 	private void queryForStudentByLastName(StudentDAO studentDAO) {
