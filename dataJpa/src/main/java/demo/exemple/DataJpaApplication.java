@@ -28,8 +28,18 @@ public class DataJpaApplication {
 			//readStudent(studentDAO);
 			//queryForStudent(studentDAO);
 			//queryForStudentByLastName(studentDAO);
-			updateStudent(studentDAO);
+			//updateStudent(studentDAO);
+			delteStudent(studentDAO);
 		};
+	}
+
+	private void delteStudent(StudentDAO studentDAO) {
+		// TODO Auto-generated method stub
+		int studentId=3;
+		System.out.println("Deleting student id: "+studentId);
+		studentDAO.delete(studentId);
+		System.out.println("Deleted");
+		
 	}
 
 	private void updateStudent(StudentDAO studentDAO) {
