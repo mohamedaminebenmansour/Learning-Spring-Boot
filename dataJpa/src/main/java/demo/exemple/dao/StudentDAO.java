@@ -5,4 +5,5 @@ import demo.exemple.entity.Student;
 public interface StudentDAO {
 
 	void save(Student theStudent);
+	
 }
