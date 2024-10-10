@@ -2,6 +2,7 @@ package demo.exemple.rest;
 
 import java.util.List;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -56,5 +57,14 @@ public class EmpolyeeRestController {
 		return dbEmployee;
 	}
 	
-	
+	//add maping for Delete /employees - delete employee
+	@DeleteMapping("/employees/{employeeId}")
+	public String deleteEmployee(@PathVariable int employeeId) {
+		Employee theEmployee= employeeService.findById(employeeId);
+		if(theEmployee==null) {
+			throw new RuntimeException("Employee id not found - "+employeeId);
+		}
+		employeeService.DeleteById(employeeId);
+		return "Delete Employee with id - "+employeeId;
+	}
 }
